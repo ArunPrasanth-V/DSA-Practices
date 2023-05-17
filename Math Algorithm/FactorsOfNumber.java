@@ -9,7 +9,7 @@ public class Main
 	public static ArrayList<Integer> factorOfNumber(int n)
 	{
 	    ArrayList<Integer> factorList = new ArrayList<>();
-	    for(int i=1;i<Math.sqrt(n);i++)
+	    for(int i=1;i<=Math.sqrt(n);i++)
 	    {
 	        if(n%i==0)
 	        {
