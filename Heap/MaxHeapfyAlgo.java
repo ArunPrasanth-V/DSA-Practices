@@ -1,5 +1,48 @@
+//Recursive Solution.
 import java.util.*;
-public class Main
+class Main
+{
+	public static void main(String[] args)
+	{
+	    int arr[] = {0,1,8,6,3,4,2,5};
+	    heapify(arr,arr.length-1,1);
+		System.out.println(Arrays.toString(arr));
+	}
+	public static void heapify(int arr[], int size, int curr_node_index)
+	{
+	    int left = 2*curr_node_index;
+	    int right = (2*curr_node_index)+1;
+	    int index = curr_node_index;
+	    
+	    if(left > size)
+	    {
+	        return;
+	    }
+	    if((right > size && arr[left]>arr[curr_node_index]) || arr[left]>arr[right] )
+	    {
+	        index = left;
+	    }
+	    else if(arr[left]<arr[right])
+	    {
+	        index = right;
+	    }
+	    
+	    if(index != curr_node_index)
+	    {
+	        swap(arr,index,curr_node_index);
+	        heapify(arr,arr.length-1,index);
+	    }
+	}
+	public static void swap(int arr[], int a, int b)
+	{
+	    int temp = arr[a];
+	    arr[a] = arr[b];
+	    arr[b] = temp;
+	}
+}
+// iterative solutions
+//import java.util.*;
+class Main1
 {
 	public static void main(String[] args)
 	{
