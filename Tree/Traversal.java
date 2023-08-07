@@ -153,11 +153,11 @@ class Main
 				if(prev.right == null)
 				{
 					prev.right = current;
+					System.out.print(current.data+" ");
 					current = current.left;
 				}
 				else
 				{
-					System.out.print(current.data+" ");
 					prev.right = null;
 					current = current.right;
 					
